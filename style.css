@@ -1,0 +1,299 @@
+/* style.css - Portafolio Luis Díaz Full Stack Developer */
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --blue-50: #eff6ff;
+  --blue-200: #bfdbfe;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
+  --blue-900: #1e3a8a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background-color: var(--gray-50);
+  color: var(--gray-800);
+  line-height: 1.5;
+}
+
+/* Header */
+.header {
+  background-color: white;
+  border-bottom: 1px solid var(--gray-200);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+.header-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.header-subtitle {
+  font-size: 1.25rem;
+  color: var(--blue-600);
+  margin-top: 0.25rem;
+}
+
+.header-location {
+  color: var(--gray-500);
+  margin-top: 0.25rem;
+}
+
+.btn-cv {
+  display: inline-block;
+  background-color: var(--blue-600);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .btn-cv {
+    margin-top: 0;
+  }
+}
+
+.btn-cv:hover {
+  background-color: var(--blue-700);
+}
+
+/* Main container */
+.main-container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* KPI Cards */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .kpi-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.kpi-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid var(--gray-200);
+}
+
+.kpi-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blue-600);
+}
+
+@media (min-width: 768px) {
+  .kpi-number {
+    font-size: 1.875rem;
+  }
+}
+
+.kpi-label {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin-top: 0.25rem;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-left: 4px solid var(--blue-600);
+  padding-left: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* About text */
+.about-text {
+  color: var(--gray-700);
+  line-height: 1.625;
+  margin-bottom: 2.5rem;
+}
+
+/* Experience cards */
+.exp-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.25rem;
+  border: 1px solid var(--gray-200);
+  margin-bottom: 1.25rem;
+}
+
+.exp-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.exp-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.exp-date {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+.exp-list {
+  list-style: disc;
+  list-style-position: inside;
+  color: var(--gray-700);
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Featured project */
+.featured {
+  background-color: var(--blue-50);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--blue-200);
+  margin-bottom: 2.5rem;
+}
+
+.featured-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--blue-900);
+}
+
+.featured-sub {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--blue-800);
+  margin-top: 0.25rem;
+}
+
+.featured-text {
+  color: var(--gray-700);
+  margin-top: 0.5rem;
+}
+
+/* Tech stack badges */
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.badge {
+  background-color: var(--gray-200);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+/* Contact section */
+.contact-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid var(--gray-200);
+}
+
+.contact-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.contact-text {
+  color: var(--gray-600);
+  margin-bottom: 1rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-link {
+  background-color: var(--gray-800);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.contact-link:hover {
+  background-color: var(--gray-900);
+}
+
+.contact-phone {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+  margin-top: 1rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  color: var(--gray-400);
+  font-size: 0.875rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}

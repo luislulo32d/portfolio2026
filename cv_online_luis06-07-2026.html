@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Díaz · Full Stack Developer · CV 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: #f0f2f5;
+            color: #1e293b;
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        .cv-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            padding: 48px 56px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #0f172a;
+            margin-bottom: 0.25rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #0f172a;
+            border-bottom: 3px solid #3b82f6;
+            display: inline-block;
+            padding-bottom: 6px;
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header con imagen y dos columnas */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e2e8f0;
+            gap: 24px;
+        }
+
+        .header-left {
+            flex: 2;
+        }
+
+        .header-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .profile-image {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #3b82f6;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            line-height: 1.6;
+            color: #475569;
+            margin-top: 16px;
+        }
+
+        .contact-info p {
+            margin-bottom: 4px;
+        }
+
+        .contact-info i {
+            width: 24px;
+            margin-right: 8px;
+            color: #3b82f6;
+            font-style: normal;
+            display: inline-block;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 24px;
+        }
+
+        .experience-card, .project-card {
+            margin-bottom: 28px;
+            break-inside: avoid;
+        }
+
+        .company {
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 8px;
+        }
+
+        .date {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .description-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .description-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        .description-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        .skills-section {
+            margin: 32px 0;
+        }
+
+        .skill-group {
+            margin-bottom: 20px;
+        }
+
+        .skill-group h4 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #0f172a;
+            font-size: 0.9rem;
+        }
+
+        .skill-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .chip {
+            background-color: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .achievement-card {
+            background-color: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 16px 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            break-inside: avoid;
+        }
+
+        .achievement-card p {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .achievement-stats {
+            font-weight: 800;
+            color: #0f172a;
+            font-size: 1rem;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+                margin: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                padding: 0.4in;
+                max-width: 100%;
+                border-radius: 0;
+            }
+            .chip {
+                background-color: #e2e8f0;
+                print-color-adjust: exact;
+            }
+            .profile-image {
+                print-color-adjust: exact;
+            }
+            .description-list li::before {
+                print-color-adjust: exact;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .cv-container {
+                padding: 24px;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header-right {
+                justify-content: flex-start;
+            }
+            .contact-info {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="cv-container">
+    <!-- ENCABEZADO CON IMAGEN DE PERFIL -->
+    <div class="header">
+        <div class="header-left">
+            <h1>Luis Díaz</h1>
+            <p style="color: #3b82f6; font-weight: 600; margin-top: 4px;">Full Stack Developer</p>
+            <p style="color: #475569; margin-top: 8px; max-width: 500px;">
+                Ingeniero en Informática con 4+ años de experiencia. Especialista en arquitectura escalable, 
+                optimización de bases de datos y rescate de sistemas legacy.
+            </p>
+            <div class="contact-info">
+                <p><i>📧</i> luislulo32d@gmail.com</p>
+                <p><i>📱</i> +58 412 138 58 91</p>
+                <p><i>📍</i> Mérida, Venezuela (Disponible Remoto)</p>
+                <p><i>🔗</i> <a href="#">linkedin.com/in/luisdiazguillen</a></p>
+                <p><i>🐙</i> <a href="#">github.com/luislulo32d</a></p>
+                <p><i>🌐</i> <a href="https://portfolio2026.luislulo32d.workers.dev" target="_blank">portfolio2026.luislulo32d.workers.dev</a></p>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="perfil.jpg" alt="Luis Díaz" class="profile-image">
+        </div>
+    </div>
+
+    <!-- DOS COLUMNAS PRINCIPALES -->
+    <div class="grid-2">
+        <!-- COLUMNA IZQUIERDA: EXPERIENCIA LABORAL Y PROYECTOS -->
+        <div>
+            <h2>💼 Experiencia profesional</h2>
+
+            <div class="experience-card">
+                <h3>Backend Developer & Technical Lead</h3>
+                <div class="company">DrocerCA · Centro y Oriente</div>
+                <div class="date">Oct 2024 – Nov 2025</div>
+                <ul class="description-list">
+                    <li>Lideré la estabilización de <strong>ProteoERP</strong> (sistema legacy sin documentación), reduciendo bugs críticos en un <strong>70%</strong> y mejorando el rendimiento un <strong>40%</strong>.</li>
+                    <li>Gestioné equipo de 4 desarrolladores en migración de <strong>15+ módulos críticos</strong>, logrando <strong>100% entregas a tiempo</strong>.</li>
+                    <li>Optimización de base de datos MySQL: consultas de reportes financieros reducidas de 10s a 2s (<strong>80% mejora</strong>).</li>
+                    <li>Diseñé arquitectura para 3 módulos de inventario procesando <strong>1,000+ transacciones diarias</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <h3>Odoo Developer (Contrato por Proyecto)</h3>
+                <div class="company">Mastercore Sinapsys Global · Partner Oficial Odoo</div>
+                <div class="date">Nov 2025 – Feb 2026</div>
+                <ul class="description-list">
+                    <li>Entregué <strong>6+ implementaciones completas</strong> en 3 meses para clientes de logística, ventas y manufactura.</li>
+                    <li>Desarrollé módulos personalizados en Python/PostgreSQL integrados con inventario, contabilidad y facturación electrónica.</li>
+                    <li>Optimicé consultas PostgreSQL reportando <strong>-40% en tiempos de carga</strong>.</li>
+                    <li>Diagnostiqué y reparé errores en sistemas Odoo legacy (v13, v15) sin documentación.</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <h3>Full Stack Developer</h3>
+                <div class="company">Liceo Bolivariano de Ejido</div>
+                <div class="date">Oct 2020 – Sep 2021</div>
+                <ul class="description-list">
+                    <li>Construí sistema de gestión académica desde cero (PHP/MySQL) para <strong>2,000+ usuarios</strong> en 2 instituciones en paralelo.</li>
+                    <li>Implementé módulos de matrícula, notas, boletines automatizados y dashboards con métricas estadísticas.</li>
+                    <li>Diseñé arquitectura segura con control de acceso por roles (RBAC).</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <h3>Web Master / SEO</h3>
+                <div class="company">Qualitas Plaza · Marketing Standard</div>
+                <div class="date">Abr 2024 – Ago 2024</div>
+                <ul class="description-list">
+                    <li>Mejoré <strong>Core Web Vitals</strong> en <strong>40%</strong> mediante caching, minificación y optimización de assets.</li>
+                    <li>Gestión técnica de múltiples sitios web de alto tráfico, asegurando escalabilidad y mantenimiento.</li>
+                </ul>
+            </div>
+
+            <h2 style="margin-top: 24px;">⭐ Proyecto destacado</h2>
+            <div class="project-card">
+                <h3>Sistema de Gestión de Notas Académicas</h3>
+                <ul class="description-list">
+                    <li>Sistema PHP/MySQL implementado en dos instituciones educativas en paralelo.</li>
+                    <li>Manejo de <strong>matrícula de alto volumen de alumnos</strong> con consultas optimizadas.</li>
+                    <li>Generación automatizada de boletines y reportes estadísticos en tiempo real.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: SKILLS, LOGROS, EDUCACIÓN E IDIOMAS -->
+        <div>
+            <h2>🛠️ Stack tecnológico</h2>
+            <div class="skills-section">
+                <div class="skill-group">
+                    <h4>Backend</h4>
+                    <div class="skill-chips">
+                        <span class="chip">PHP/Laravel (Experto)</span>
+                        <span class="chip">Node.js / Express</span>
+                        <span class="chip">Python / Odoo</span>
+                        <span class="chip">.NET Core (Bases)</span>
+                        <span class="chip">REST APIs</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4>Frontend</h4>
+                    <div class="skill-chips">
+                        <span class="chip">React</span>
+                        <span class="chip">Vue.js</span>
+                        <span class="chip">Angular (Básico)</span>
+                        <span class="chip">Bootstrap</span>
+                        <span class="chip">HTML5/CSS3</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4>Bases de Datos</h4>
+                    <div class="skill-chips">
+                        <span class="chip">MySQL (Experto)</span>
+                        <span class="chip">PostgreSQL</span>
+                        <span class="chip">SQL Server</span>
+                        <span class="chip">Optimización / Tuning</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4>DevOps & Herramientas</h4>
+                    <div class="skill-chips">
+                        <span class="chip">Git / GitHub</span>
+                        <span class="chip">Docker</span>
+                        <span class="chip">Postman</span>
+                        <span class="chip">Metodologías Ágiles</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>🏆 Logros clave</h2>
+            <div class="achievement-card">
+                <p class="achievement-stats">🚀 -70% bugs críticos · +40% rendimiento general</p>
+                <p>Estabilización completa de ERP crítico sin documentación en solo 6 meses.</p>
+            </div>
+            <div class="achievement-card">
+                <p class="achievement-stats">⚡ 80% mejora en tiempos de consulta</p>
+                <p>Rediseño de queries e índices en MySQL para reportes financieros.</p>
+            </div>
+            <div class="achievement-card">
+                <p class="achievement-stats">📦 6+ implementaciones Odoo en 3 meses</p>
+                <p>Entregas a tiempo para múltiples clientes del rubro logístico y manufactura.</p>
+            </div>
+            <div class="achievement-card">
+                <p class="achievement-stats">🏫 Sistema académico para 2,000+ usuarios</p>
+                <p>Desarrollo completo, desde base de datos hasta frontend, desplegado en producción.</p>
+            </div>
+
+            <h2>🎓 Educación</h2>
+            <div class="experience-card">
+                <h3>Ingeniería en Informática</h3>
+                <div class="company">UPTM Kléber Ramírez (Mérida, Venezuela)</div>
+                <div class="date">Ene 2022 – Abr 2024</div>
+            </div>
+            <div class="experience-card">
+                <h3>Técnico Superior Universitario en Informática</h3>
+                <div class="company">UPTM Kléber Ramírez</div>
+                <div class="date">Jun 2018 – Dic 2021</div>
+            </div>
+            <div class="experience-card">
+                <h3>Bachiller en Ciencias</h3>
+                <div class="company">Unidad Educativa Julio César Dávila</div>
+                <div class="date">2016</div>
+            </div>
+
+            <h2 style="margin-top: 16px;">🌐 Idiomas</h2>
+            <div class="skill-chips" style="margin-bottom: 16px;">
+                <span class="chip">🇪🇸 Español: Nativo</span>
+                <span class="chip">🇬🇧 Inglés: Intermedio (B2) · Técnico</span>
+            </div>
+
+            <div class="achievement-card" style="background-color: #eff6ff; border-left-color: #2563eb;">
+                <p class="achievement-stats">✅ Disponibilidad inmediata</p>
+                <p>100% remoto · Full Time · Abierto a cambio de residencia.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.7rem; color: #94a3b8;">
+        Luis David Díaz Guillén — Full Stack Developer — Referencias disponibles bajo solicitud
+    </div>
+</div>
+</body>
+</html>

@@ -558,3 +558,151 @@ footer {
         padding: 1.5rem;
     }
 }
+/* ========== PORTFOLIO SECTION ========== */
+.portfolio-item {
+    margin-bottom: 4rem;
+    padding: 1.5rem;
+    background: var(--surface-glass);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.portfolio-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-tech {
+    color: var(--primary);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-desc {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Swiper carousel */
+.portfolio-swiper {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.portfolio-swiper .swiper-slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.5rem;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary);
+    background: rgba(0,0,0,0.5);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 1.2rem;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary);
+}
+
+/* Responsive portfolio */
+@media (max-width: 768px) {
+    .portfolio-swiper .swiper-slide img {
+        height: 200px;
+    }
+    
+    .portfolio-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Enlaces en las imágenes del portafolio */
+.portfolio-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.portfolio-link img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.5rem;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.portfolio-link:hover img {
+    transform: scale(1.02);
+    filter: brightness(0.9);
+}
+
+@media (max-width: 768px) {
+    .portfolio-link img {
+        height: 200px;
+    }
+}
+/* Language Switcher */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 8px;
+    background: var(--surface-glass);
+    backdrop-filter: blur(10px);
+    padding: 6px 12px;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text);
+    transition: all 0.3s;
+}
+
+.lang-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+.lang-btn:hover:not(.active) {
+    background: var(--surface);
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .language-switcher {
+        top: 70px;
+        left: 20px;
+    }
+}

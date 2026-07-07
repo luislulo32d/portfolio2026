@@ -110,3 +110,34 @@ function createParticles() {
 }
 
 createParticles();
+
+// Inicializar carruseles de portafolio
+document.addEventListener('DOMContentLoaded', function() {
+    const swipers = document.querySelectorAll('.portfolio-swiper');
+    swipers.forEach(swiperEl => {
+        new Swiper(swiperEl, {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: swiperEl.querySelector('.swiper-pagination'),
+                clickable: true,
+            },
+            navigation: {
+                nextEl: swiperEl.querySelector('.swiper-button-next'),
+                prevEl: swiperEl.querySelector('.swiper-button-prev'),
+            },
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            }
+        });
+    });
+});
+
+// Evitar que Swiper interfiera con los clics en enlaces
+document.querySelectorAll('.portfolio-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+});

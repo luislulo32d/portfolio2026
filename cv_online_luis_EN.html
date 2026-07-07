@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Díaz · Resume 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+        .cv {
+            max-width: 1100px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px -12px rgba(0, 0, 0, 0.20);
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            overflow: hidden;
+        }
+        .sidebar {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 40px 24px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #3b82f6;
+            margin: 0 auto 8px;
+            display: block;
+        }
+        .sidebar h2 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 8px;
+            margin-bottom: 14px;
+        }
+        .sidebar .name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .sidebar .title {
+            text-align: center;
+            color: #94a3b8;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-top: -4px;
+        }
+        .sidebar .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.75rem;
+            color: #cbd5e1;
+            margin-bottom: 10px;
+        }
+        .sidebar .contact-item i {
+            width: 20px;
+            color: #3b82f6;
+            font-size: 1rem;
+        }
+        .sidebar .contact-item a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+        .sidebar .contact-item a:hover {
+            color: #ffffff;
+        }
+        .skill-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill-chips span {
+            background: #1e293b;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #e2e8f0;
+            border: 1px solid #334155;
+        }
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            padding: 4px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+        .lang-item span:last-child {
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        .ref-item {
+            margin-bottom: 14px;
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+        .ref-item strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .ref-item .ref-role {
+            color: #94a3b8;
+            font-size: 0.7rem;
+        }
+        .main {
+            padding: 40px 44px 32px 36px;
+            background: #ffffff;
+        }
+        .main h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 3px solid #3b82f6;
+            display: inline-block;
+            padding-bottom: 4px;
+            margin-bottom: 18px;
+            letter-spacing: -0.02em;
+        }
+        .main .section {
+            margin-bottom: 32px;
+        }
+        .exp-item {
+            margin-bottom: 22px;
+        }
+        .exp-item .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 4px;
+        }
+        .exp-item .exp-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .exp-item .exp-header .company {
+            font-weight: 600;
+            color: #3b82f6;
+        }
+        .exp-item .exp-header .date {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+        .exp-item ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 6px;
+        }
+        .exp-item ul li {
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.9rem;
+            color: #334155;
+            margin-bottom: 4px;
+        }
+        .exp-item ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0 4px;
+        }
+        .badge {
+            background: #eff6ff;
+            color: #1e40af;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid #bfdbfe;
+        }
+        .badge.green {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .badge.orange {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .badge.purple {
+            background: #f5f3ff;
+            color: #5b21b6;
+            border-color: #c4b5fd;
+        }
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .highlight-card {
+            background: #f8fafc;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+        }
+        .highlight-card .number {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+        .highlight-card .label {
+            font-size: 0.8rem;
+            color: #475569;
+        }
+        @media print {
+            body {
+                background: white;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .cv {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+            }
+            .sidebar {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .badge, .badge.green, .badge.orange, .badge.purple {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .highlight-card {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+        @media (max-width: 750px) {
+            .cv {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                text-align: center;
+            }
+            .sidebar .contact-item {
+                justify-content: center;
+            }
+            .main {
+                padding: 28px 20px;
+            }
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="cv">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <img src="perfil.jpg" alt="Luis Díaz" class="profile-img">
+        <div>
+            <div class="name">Luis Díaz</div>
+            <div class="title">Full Stack Developer</div>
+        </div>
+
+        <div>
+            <h2>Contact</h2>
+            <div class="contact-item"><i class="fas fa-envelope"></i> luislulo32d@gmail.com</div>
+            <div class="contact-item"><i class="fas fa-phone"></i> +58 412 138 58 91</div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Mérida, Venezuela</div>
+            <div class="contact-item"><i class="fab fa-linkedin"></i> <a href="#">luisdiazguillen</a></div>
+            <div class="contact-item"><i class="fab fa-github"></i> <a href="#">luislulo32d</a></div>
+            <div class="contact-item"><i class="fas fa-globe"></i> <a href="#">portfolio2026.luislulo32d.workers.dev</a></div>
+        </div>
+
+        <div>
+            <h2>Skills</h2>
+            <div class="skill-chips">
+                <span>PHP/Laravel</span>
+                <span>Node.js</span>
+                <span>Python</span>
+                <span>React</span>
+                <span>Vue.js</span>
+                <span>MySQL</span>
+                <span>PostgreSQL</span>
+                <span>REST APIs</span>
+                <span>Git</span>
+                <span>Docker</span>
+            </div>
+        </div>
+
+        <div>
+            <h2>Languages</h2>
+            <div class="lang-item"><span>Spanish</span><span>Native</span></div>
+            <div class="lang-item"><span>English</span><span>B2 · Technical</span></div>
+        </div>
+
+        <div>
+            <h2>Availability</h2>
+            <div style="font-size:0.9rem; color:#cbd5e1;">✅ Immediate · 100% Remote</div>
+            <div style="font-size:0.9rem; color:#cbd5e1; margin-top:4px;">🌎 Open to relocation</div>
+        </div>
+
+        <!-- PERSONAL REFERENCES -->
+        <div>
+            <h2>References available upon request</h2>
+            <!-- <div class="ref-item">
+                <strong>Eng. Manuel Puente</strong><br>
+                +58 424-7747455<br>
+                <span class="ref-role">Semi Senior React · University Colleague</span>
+            </div>
+            <div class="ref-item">
+                <strong>Eng. Efrén Urrecheaga</strong><br>
+                +58 416-8784333<br>
+                <span class="ref-role">DrocerCA Colleague · Development Duo</span>
+            </div>
+            <div class="ref-item">
+                <strong>Eng. Carlos Piña</strong><br>
+                +58 424-7616389<br>
+                <span class="ref-role">Senior · ProteoERP Creator · Tech Lead</span>
+            </div>
+            <div class="ref-item">
+                <strong>Dr. Mitchell Ferrer</strong><br>
+                +58 414-7560703<br>
+                <span class="ref-role">HR Director · DrocerCA</span>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+        <!-- Profile -->
+        <div class="section">
+            <h2>Profile</h2>
+            <p style="color:#334155; font-size:0.95rem; line-height:1.6;">
+                Computer Engineer with <strong>4+ years of experience</strong> as a Full Stack Developer.
+                <strong>My key strengths</strong> are <strong>backend development</strong>, <strong>database design and optimization</strong>,
+                <strong>complex problem-solving</strong>, and <strong>UX interface design</strong> that enhances user experience.
+                I have worked with <strong>Odoo</strong> on projects for multiple clients, developing custom modules and integrations.
+                I've led technical teams, reduced critical bugs by <strong>70%</strong> and improved query performance by <strong>80%</strong>.
+            </p>
+        </div>
+
+        <!-- Key Achievements -->
+        <div class="section">
+            <h2>Key Achievements</h2>
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <div class="number">70%</div>
+                    <div class="label">Fewer critical bugs</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="number">80%</div>
+                    <div class="label">Faster queries</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="number">40%</div>
+                    <div class="label">Performance improvement</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="number">1,000+</div>
+                    <div class="label">Transactions / day</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <h2>Experience</h2>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>Backend Developer & Technical Lead</h3>
+                        <span class="company">DrocerCA</span>
+                    </div>
+                    <span class="date">Oct 2024 – Nov 2025</span>
+                </div>
+                <ul>
+                    <li>Led the stabilization of <strong>ProteoERP</strong> (legacy with no documentation), reducing critical bugs by <strong>70%</strong> and improving performance by <strong>40%</strong>.</li>
+                    <li>Managed a team of 4 developers during migration of <strong>15+ critical modules</strong>, achieving <strong>100% on-time delivery</strong>.</li>
+                    <li>Optimized MySQL queries from 10s to 2s (<strong>80% improvement</strong>) in financial reports.</li>
+                    <li>Designed architecture for 3 inventory modules handling <strong>1,000+ daily transactions</strong>.</li>
+                </ul>
+                <div class="badge-group">
+                    <span class="badge">PHP/Laravel</span>
+                    <span class="badge green">MySQL</span>
+                    <span class="badge orange">REST APIs</span>
+                    <span class="badge purple">Leadership</span>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>Odoo Developer</h3>
+                        <span class="company">Projects for multiple clients</span>
+                    </div>
+                    <span class="date">Nov 2025 – Feb 2026</span>
+                </div>
+                <ul>
+                    <li>Developed custom modules in <strong>Python/PostgreSQL</strong> for logistics, sales, and manufacturing.</li>
+                    <li>Integrated accounting, inventory, and e-invoicing systems.</li>
+                    <li>Optimized PostgreSQL queries achieving <strong>-40% load time</strong> in financial reports.</li>
+                    <li>Diagnosed and fixed bugs in legacy systems with no documentation.</li>
+                </ul>
+                <div class="badge-group">
+                    <span class="badge">Python</span>
+                    <span class="badge green">PostgreSQL</span>
+                    <span class="badge orange">APIs</span>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>Full Stack Developer</h3>
+                        <span class="company">Liceo Bolivariano de Ejido</span>
+                    </div>
+                    <span class="date">Oct 2020 – Sep 2022</span>
+                </div>
+                <ul>
+                    <li>Built an academic management system from scratch (PHP/MySQL) for <strong>2,000+ users</strong> across 2 parallel institutions.</li>
+                    <li>Implemented enrollment, grades, automated report cards and dashboards with statistical metrics.</li>
+                    <li>Designed secure architecture with role-based access control (RBAC).</li>
+                </ul>
+                <div class="badge-group">
+                    <span class="badge">PHP</span>
+                    <span class="badge green">MySQL</span>
+                    <span class="badge">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>Web Master / SEO</h3>
+                        <span class="company">Qualitas Plaza · Marketing Standard</span>
+                    </div>
+                    <span class="date">Jan 2023 – Dec 2023</span>
+                </div>
+                <ul>
+                    <li>Improved <strong>Core Web Vitals</strong> by <strong>40%</strong> through caching, minification and asset optimization.</li>
+                    <li>Technical management of multiple high-traffic websites, ensuring scalability and maintenance.</li>
+                </ul>
+                <div class="badge-group">
+                    <span class="badge">WordPress</span>
+                    <span class="badge orange">SEO</span>
+                    <span class="badge green">Performance</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2>Education</h2>
+            <div style="margin-bottom:8px;">
+                <div style="font-weight:700; color:#0f172a;">Computer Engineering</div>
+                <div style="color:#3b82f6; font-weight:500;">UPTM Kléber Ramírez</div>
+                <div style="color:#64748b; font-size:0.85rem;">Jan 2022 – Apr 2024</div>
+            </div>
+            <div style="margin-bottom:8px;">
+                <div style="font-weight:700; color:#0f172a;">Associate Degree in Computer Science</div>
+                <div style="color:#3b82f6; font-weight:500;">UPTM Kléber Ramírez</div>
+                <div style="color:#64748b; font-size:0.85rem;">Jun 2018 – Dec 2021</div>
+            </div>
+            <div>
+                <div style="font-weight:700; color:#0f172a;">High School Diploma (Science)</div>
+                <div style="color:#3b82f6; font-weight:500;">Unidad Educativa Julio César Dávila</div>
+                <div style="color:#64748b; font-size:0.85rem;">2016</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

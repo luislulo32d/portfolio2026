@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flyer Profesional - Luis Díaz</title>
+    <!-- Fuente Google Inter + Font Awesome para iconos profesionales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0b1424;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        /* Flyer principal – SIN BORDES, con imagen de fondo */
+        .flyer {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+            border-radius: 36px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            /* Imagen de fondo (Unsplash – código/tech) con overlay */
+            background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(10, 22, 40, 0.75);
+            /* fallback color + blend */
+            color: #ffffff;
+            padding: 3rem 3.5rem;
+            transition: all 0.2s;
+        }
+
+        /* Overlay adicional para legibilidad */
+        .flyer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, rgba(10, 22, 40, 0.82) 0%, rgba(20, 40, 80, 0.70) 100%);
+            z-index: 1;
+            pointer-events: none;
+            border-radius: 36px;
+        }
+
+        /* Todo el contenido debe estar por encima del overlay */
+        .flyer>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Encabezado */
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 2.2rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 1.5rem;
+        }
+
+        .header .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(59, 130, 246, 0.25);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #93bbfc;
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            margin-bottom: 1rem;
+        }
+
+        .header .badge i {
+            color: #60a5fa;
+            font-size: 0.8rem;
+        }
+
+        .header h1 {
+            font-size: 3.6rem;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            background: linear-gradient(to right, #ffffff, #b6d4fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.25rem;
+        }
+
+        .header .subhead {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 0.2px;
+        }
+
+        .header .subhead strong {
+            font-weight: 700;
+            color: #ffffff;
+            background: linear-gradient(to right, #facc15, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .subhead i {
+            color: #facc15;
+            margin: 0 0.3rem;
+        }
+
+        /* Eslogan */
+        .slogan {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.3rem;
+            letter-spacing: 0.5px;
+            border-left: 3px solid #facc15;
+            padding-left: 1rem;
+        }
+
+        /* Grid de servicios – más profesionales con tarjetas */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            margin: 2.2rem 0 2rem 0;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 1.2rem 1.2rem 1rem 1.2rem;
+            transition: all 0.2s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .service-card .icon {
+            font-size: 1.6rem;
+            color: #60a5fa;
+            margin-bottom: 0.4rem;
+        }
+
+        .service-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.2px;
+            margin-bottom: 0.2rem;
+        }
+
+        .service-card p {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+        }
+
+        /* Beneficios destacados (badges) */
+        .highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.4rem;
+            margin: 1.8rem 0 2.2rem 0;
+            padding: 1.2rem 1.5rem;
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(4px);
+            border-radius: 60px;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .highlights .item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #e0edff;
+        }
+
+        .highlights .item i {
+            color: #facc15;
+            font-size: 0.9rem;
+        }
+
+        /* Contacto + CTA */
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem 2.5rem;
+        }
+
+        .contact-info .item {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .contact-info .item i {
+            font-size: 1.1rem;
+            color: #60a5fa;
+            width: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-info .item .value {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .btn-cta {
+            background: linear-gradient(135deg, #facc15, #f59e0b);
+            color: #0b1424;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.7rem 2.2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.2s;
+            border: none;
+            box-shadow: 0 8px 20px rgba(250, 204, 21, 0.25);
+            letter-spacing: 0.3px;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 30px rgba(250, 204, 21, 0.4);
+        }
+
+        .btn-cta i {
+            font-size: 0.9rem;
+        }
+
+        /* Footer pequeño */
+        .footer-note {
+            margin-top: 1.5rem;
+            text-align: right;
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.5px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 0.8rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 820px) {
+            .flyer {
+                padding: 2rem 1.8rem;
+            }
+            .header h1 {
+                font-size: 2.8rem;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .highlights {
+                border-radius: 30px;
+                padding: 1rem 1.2rem;
+                gap: 0.6rem 1.2rem;
+            }
+            .contact-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+            .contact-info {
+                gap: 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .flyer {
+                padding: 1.5rem 1rem;
+                border-radius: 24px;
+            }
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .highlights {
+                flex-direction: column;
+                align-items: flex-start;
+                border-radius: 20px;
+                gap: 0.4rem;
+            }
+            .btn-cta {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Para impresión / PDF: sin bordes, colores sólidos */
+        @media print {
+            body {
+                background: white;
+                padding: 0.2in;
+            }
+            .flyer {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0.3in;
+                max-width: 100%;
+                background-image: none !important;
+                background-color: #0b1a33 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .flyer::before {
+                display: none;
+            }
+            .service-card {
+                background: rgba(255, 255, 255, 0.08) !important;
+                backdrop-filter: none !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .highlights {
+                background: rgba(0, 0, 0, 0.2) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .btn-cta {
+                background: #facc15 !important;
+                color: #0b1424 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .header .badge {
+                background: rgba(59, 130, 246, 0.2) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .header h1 {
+                -webkit-text-fill-color: #ffffff !important;
+                background: none !important;
+                color: #ffffff !important;
+            }
+            .header .subhead strong {
+                -webkit-text-fill-color: #facc15 !important;
+                background: none !important;
+                color: #facc15 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="badge">
+                <i class="fas fa-rocket"></i> Full Stack · Backend · DB
+            </div>
+            <h1>Luis Díaz</h1>
+            <div class="subhead">
+                <i class="fas fa-code"></i> <strong>Desarrollador Full Stack</strong> &nbsp;·&nbsp; Arquitectura &amp; Escalabilidad
+            </div>
+            <div class="slogan">
+                <i class="fas fa-bolt" style="color: #facc15; margin-right: 0.4rem;"></i> Transformación digital de alto impacto
+            </div>
+        </div>
+
+        <!-- SERVICIOS (grid 3 columnas) -->
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon"><i class="fas fa-globe"></i></div>
+                <h4>Web Full Stack</h4>
+                <p>React · Vue · Angular · Node.js · Python · Go</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><i class="fas fa-cogs"></i></div>
+                <h4>APIs &amp; Microservicios</h4>
+                <p>REST · GraphQL · Arquitectura escalable</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><i class="fas fa-database"></i></div>
+                <h4>Bases de Datos · Tuning</h4>
+                <p>SQL · NoSQL · Indexación · Optimización</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><i class="fas fa-lock"></i></div>
+                <h4>Seguridad &amp; Migraciones</h4>
+                <p>Auth · Autorización · Migración de sistemas</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><i class="fas fa-cloud"></i></div>
+                <h4>DevOps · Nube</h4>
+                <p>AWS · Azure · GCP · Docker · K8s · CI/CD</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
+                <h4>Rendimiento &amp; Escalabilidad</h4>
+                <p>Optimización · Caching · CDN · Monitoreo</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><i class="fas fa-project-diagram"></i></div>
+                <h4>Arquitectura de Software</h4>
+                <p>Clean Code · Patrones · Diseño modular</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><i class="fas fa-handshake"></i></div>
+                <h4>Consultoría &amp; Soporte</h4>
+                <p>Transformación digital · Auditoría · Mantenimiento</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                <h4>Apps · Progressive Web</h4>
+                <p>PWA · Mobile-first · Experiencia de usuario</p>
+            </div>
+        </div>
+
+        <!-- HIGHLIGHTS / BENEFICIOS -->
+        <div class="highlights">
+            <span class="item"><i class="fas fa-check-circle"></i> Sitios modernos y adaptables</span>
+            <span class="item"><i class="fas fa-shield-alt"></i> Alto rendimiento y seguridad</span>
+            <span class="item"><i class="fas fa-server"></i> Backend robusto y escalable</span>
+            <span class="item"><i class="fas fa-bolt"></i> Consultas rápidas y eficientes</span>
+        </div>
+
+        <!-- CONTACTO + CTA -->
+        <div class="contact-section">
+            <div class="contact-info">
+                <div class="item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span class="value">+58 412-1385891</span>
+                </div>
+                <div class="item">
+                    <i class="fas fa-envelope"></i>
+                    <span class="value">luislulo32d@gmail.com</span>
+                </div>
+                <div class="item">
+                    <i class="fas fa-globe-americas"></i>
+                    <span class="value">https://portfolio2026.luislulo32d.workers.dev/</span>
+                </div>
+            </div>
+            <a href="#" class="btn-cta">
+                <i class="fas fa-paper-plane"></i> Contáctame
+            </a>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer-note">
+            <i class="fas fa-arrow-right" style="margin-right: 0.3rem;"></i> Transforma tu presencia digital con soluciones de clase mundial
+        </div>
+    </div>
+</body>
+</html>

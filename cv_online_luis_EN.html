@@ -309,14 +309,14 @@
         <div>
             <h2>Skills</h2>
             <div class="skill-chips">
+                <span>SQL Server</span>
+                <span>PowerBuilder</span>
                 <span>PHP/Laravel</span>
                 <span>Node.js</span>
                 <span>Python</span>
                 <span>React</span>
-                <span>Vue.js</span>
-                <span>MySQL</span>
-                <span>PostgreSQL</span>
                 <span>REST APIs</span>
+                <span>PostgreSQL</span>
                 <span>Git</span>
                 <span>Docker</span>
             </div>
@@ -330,33 +330,13 @@
 
         <div>
             <h2>Availability</h2>
-            <div style="font-size:0.9rem; color:#cbd5e1;">✅ Immediate · 100% Remote</div>
+            <div style="font-size:0.9rem; color:#cbd5e1;">✅ Immediate</div>
             <div style="font-size:0.9rem; color:#cbd5e1; margin-top:4px;">🌎 Open to relocation</div>
         </div>
 
         <!-- PERSONAL REFERENCES -->
         <div>
             <h2>References available upon request</h2>
-            <!-- <div class="ref-item">
-                <strong>Eng. Manuel Puente</strong><br>
-                +58 424-7747455<br>
-                <span class="ref-role">Semi Senior React · University Colleague</span>
-            </div>
-            <div class="ref-item">
-                <strong>Eng. Efrén Urrecheaga</strong><br>
-                +58 416-8784333<br>
-                <span class="ref-role">DrocerCA Colleague · Development Duo</span>
-            </div>
-            <div class="ref-item">
-                <strong>Eng. Carlos Piña</strong><br>
-                +58 424-7616389<br>
-                <span class="ref-role">Senior · ProteoERP Creator · Tech Lead</span>
-            </div>
-            <div class="ref-item">
-                <strong>Dr. Mitchell Ferrer</strong><br>
-                +58 414-7560703<br>
-                <span class="ref-role">HR Director · DrocerCA</span>
-            </div> -->
         </div>
     </div>
 
@@ -368,10 +348,9 @@
             <h2>Profile</h2>
             <p style="color:#334155; font-size:0.95rem; line-height:1.6;">
                 Computer Engineer with <strong>4+ years of experience</strong> as a Full Stack Developer.
-                <strong>My key strengths</strong> are <strong>backend development</strong>, <strong>database design and optimization</strong>,
-                <strong>complex problem-solving</strong>, and <strong>UX interface design</strong> that enhances user experience.
-                I have worked with <strong>Odoo</strong> on projects for multiple clients, developing custom modules and integrations.
-                I've led technical teams, reduced critical bugs by <strong>70%</strong> and improved query performance by <strong>80%</strong>.
+                <strong>My key strengths</strong> are <strong>backend development</strong>, <strong>database optimization (SQL Server, PostgreSQL, MySQL)</strong> with advanced use of <strong>stored procedures, triggers, and indexing</strong>, <strong>stabilization of legacy systems without documentation through reverse engineering</strong>, and <strong>designing REST APIs</strong> for integration with external services (e-invoicing, payment gateways).
+                I have worked with <strong>PowerBuilder</strong> (DataWindow, client/server) in proof-of-concept projects involving multiple distributed databases.
+                I've led technical teams, reduced critical bugs by <strong>70%</strong> and improved query performance from 8 minutes to under 5 seconds (<strong>98.96%</strong>).
             </p>
         </div>
 
@@ -384,8 +363,8 @@
                     <div class="label">Fewer critical bugs</div>
                 </div>
                 <div class="highlight-card">
-                    <div class="number">80%</div>
-                    <div class="label">Faster queries</div>
+                    <div class="number">98.96%</div>
+                    <div class="label">Query improvement<br>(8 min → 5s)</div>
                 </div>
                 <div class="highlight-card">
                     <div class="number">40%</div>
@@ -402,28 +381,7 @@
         <div class="section">
             <h2>Experience</h2>
 
-            <div class="exp-item">
-                <div class="exp-header">
-                    <div>
-                        <h3>Backend Developer & Technical Lead</h3>
-                        <span class="company">DrocerCA</span>
-                    </div>
-                    <span class="date">Oct 2024 – Nov 2025</span>
-                </div>
-                <ul>
-                    <li>Led the stabilization of <strong>ProteoERP</strong> (legacy with no documentation), reducing critical bugs by <strong>70%</strong> and improving performance by <strong>40%</strong>.</li>
-                    <li>Managed a team of 4 developers during migration of <strong>15+ critical modules</strong>, achieving <strong>100% on-time delivery</strong>.</li>
-                    <li>Optimized MySQL queries from 10s to 2s (<strong>80% improvement</strong>) in financial reports.</li>
-                    <li>Designed architecture for 3 inventory modules handling <strong>1,000+ daily transactions</strong>.</li>
-                </ul>
-                <div class="badge-group">
-                    <span class="badge">PHP/Laravel</span>
-                    <span class="badge green">MySQL</span>
-                    <span class="badge orange">REST APIs</span>
-                    <span class="badge purple">Leadership</span>
-                </div>
-            </div>
-
+             <!-- ODOO -->
             <div class="exp-item">
                 <div class="exp-header">
                     <div>
@@ -445,6 +403,53 @@
                 </div>
             </div>
 
+            <!-- DROCERCA - Updated with new information -->
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>Backend Developer & Technical Lead</h3>
+                        <span class="company">DrocerCA</span>
+                    </div>
+                    <span class="date">Oct 2024 – Nov 2025</span>
+                </div>
+                <ul>
+                    <li><strong>Reverse engineering and stabilization of a legacy ERP (30+ years of evolution):</strong> Led the rescue of <strong>ProteoERP</strong>, a critical system with no documentation and over <strong>30 years of continuous development (since 1995)</strong>. Applied <strong>reverse engineering</strong> techniques to map business logic, data structures, and module dependencies in a system with multiple historical layers. Documented the system from scratch and stabilized its operation, reducing <strong>critical bugs by 70%</strong> and improving overall performance by <strong>40%</strong>.</li>
+                    <li><strong>Extreme database optimization (SQL Server):</strong> Designed and implemented a comprehensive optimization strategy including <strong>strategic indexing, refactoring of complex queries, and advanced use of stored procedures and triggers</strong> in a system with decades of accumulated data. Reduced financial report response times from <strong>8 minutes to under 5 seconds (98.96% improvement)</strong>. Also worked with <strong>3 databases on different servers</strong>, unifying distributed queries to consolidate real-time information.</li>
+                    <li><strong>Digital invoicing API development:</strong> Designed and implemented a <strong>REST API</strong> for generating and sending electronic invoices, integrating ERP business logic with <strong>SENIAT</strong> standards. The API handled data validation, tax calculation (VAT, ISLR, IGTF), XML generation, and communication with e-invoicing services. This fully automated the process, reducing manual errors and accelerating monthly closings.</li>
+                    <li><strong>PowerBuilder Proof of Concept (DataWindow & Client/Server):</strong> Evaluated the feasibility of PowerBuilder to unify queries across multiple databases. Developed a <strong>billing module proof of concept</strong> using <strong>DataWindow</strong> for visual data management and client/server logic. This experience gave me a deep understanding of PowerBuilder architecture, DataWindow management, and PowerScript language, though it wasn't eventually implemented in production.</li>
+                    <li><strong>Structural analysis and debugging of complex systems:</strong> Conducted a thorough analysis of the ERP's structure, identifying bottlenecks, hidden dependencies, and obsolete code in a system with decades of patches and modifications. Used <strong>debugging</strong> techniques at both database and application level to identify and fix errors in a system with no documentation.</li>
+                </ul>
+                <div class="badge-group">
+                    <span class="badge">30+ years</span>
+                    <span class="badge">SQL Server</span>
+                    <span class="badge green">Triggers</span>
+                    <span class="badge orange">REST APIs</span>
+                    <span class="badge purple">PowerBuilder</span>
+                    <span class="badge">Reverse Engineering</span>
+                </div>
+            </div>
+            
+            <!-- QUALITAS -->
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>Web Master / SEO</h3>
+                        <span class="company">Qualitas Plaza · Marketing Standard</span>
+                    </div>
+                    <span class="date">Jan 2023 – Dec 2023</span>
+                </div>
+                <ul>
+                    <li>Improved <strong>Core Web Vitals</strong> by <strong>40%</strong> through caching, minification and asset optimization.</li>
+                    <li>Technical management of multiple high-traffic websites, ensuring scalability and maintenance.</li>
+                </ul>
+                <div class="badge-group">
+                    <span class="badge">WordPress</span>
+                    <span class="badge orange">SEO</span>
+                    <span class="badge green">Performance</span>
+                </div>
+            </div>
+
+             <!-- LICEO -->
             <div class="exp-item">
                 <div class="exp-header">
                     <div>
@@ -464,25 +469,7 @@
                     <span class="badge">JavaScript</span>
                 </div>
             </div>
-
-            <div class="exp-item">
-                <div class="exp-header">
-                    <div>
-                        <h3>Web Master / SEO</h3>
-                        <span class="company">Qualitas Plaza · Marketing Standard</span>
-                    </div>
-                    <span class="date">Jan 2023 – Dec 2023</span>
-                </div>
-                <ul>
-                    <li>Improved <strong>Core Web Vitals</strong> by <strong>40%</strong> through caching, minification and asset optimization.</li>
-                    <li>Technical management of multiple high-traffic websites, ensuring scalability and maintenance.</li>
-                </ul>
-                <div class="badge-group">
-                    <span class="badge">WordPress</span>
-                    <span class="badge orange">SEO</span>
-                    <span class="badge green">Performance</span>
-                </div>
-            </div>
+            
         </div>
 
         <!-- Education -->

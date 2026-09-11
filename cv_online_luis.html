@@ -35,7 +35,7 @@
         .sidebar {
             background: #0f172a;
             color: #e2e8f0;
-            padding: 40px 24px 32px;
+            padding: 40px 0px 32px;
             display: flex;
             flex-direction: column;
             gap: 28px;
@@ -75,9 +75,9 @@
         .sidebar .contact-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 0.75rem;
-            color: #cbd5e1;
+            /* gap: 12px; */
+            font-size: 1rem;
+            color: #fff;
             margin-bottom: 10px;
         }
         .sidebar .contact-item i {
@@ -86,8 +86,9 @@
             font-size: 1rem;
         }
         .sidebar .contact-item a {
-            color: #cbd5e1;
+            color: #fff;
             text-decoration: none;
+            font-size: 0.79rem;
         }
         .sidebar .contact-item a:hover {
             color: #ffffff;
@@ -104,7 +105,7 @@
             font-size: 0.75rem;
             font-weight: 500;
             color: #e2e8f0;
-            border: 1px solid #334155;
+            border: 1px solid #000;
         }
         .lang-item {
             display: flex;
@@ -120,7 +121,7 @@
         .ref-item {
             margin-bottom: 14px;
             font-size: 0.8rem;
-            color: #cbd5e1;
+            color: #fff;
             line-height: 1.5;
         }
         .ref-item strong {
@@ -181,7 +182,7 @@
             padding-left: 20px;
             position: relative;
             font-size: 0.9rem;
-            color: #334155;
+            color: #000;
             margin-bottom: 4px;
         }
         .exp-item ul li::before {
@@ -293,6 +294,7 @@
         <img src="perfil.jpg" alt="Luis Díaz" class="profile-img">
         <div>
             <div class="name">Luis Díaz</div>
+            <div class="title">Ingeniero en Informática</div>
             <div class="title">Full Stack Developer</div>
         </div>
 
@@ -300,23 +302,23 @@
             <h2>Contacto</h2>
             <div class="contact-item"><i class="fas fa-envelope"></i> luislulo32d@gmail.com</div>
             <div class="contact-item"><i class="fas fa-phone"></i> +58 412 138 58 91</div>
-            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Mérida, Venezuela</div>
-            <div class="contact-item"><i class="fab fa-linkedin"></i> <a href="#">luisdiazguillen</a></div>
-            <div class="contact-item"><i class="fab fa-github"></i> <a href="#">luislulo32d</a></div>
-            <div class="contact-item"><i class="fas fa-globe"></i> <a href="#">portfolio2026.luislulo32d.workers.dev</a></div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Av. Las Ámericas, Mérida, Venezuela</div>
+            <div class="contact-item"><i class="fab fa-linkedin"></i> https://www.linkedin.com/in/<br>luisdiazguillen/</div>
+            <div class="contact-item"><i class="fab fa-github"></i> https://github.com/luislulo32d</div>
+            <div class="contact-item"><i class="fas fa-globe"></i> https://portfolio2026.luislulo32d.<br>workers.dev</div>
         </div>
 
         <div>
             <h2>Habilidades</h2>
             <div class="skill-chips">
+                <span>SQL Server</span>
+                <span>PowerBuilder</span>
                 <span>PHP/Laravel</span>
                 <span>Node.js</span>
                 <span>Python</span>
                 <span>React</span>
-                <span>Vue.js</span>
-                <span>MySQL</span>
-                <span>PostgreSQL</span>
                 <span>APIs REST</span>
+                <span>PostgreSQL</span>
                 <span>Git</span>
                 <span>Docker</span>
             </div>
@@ -330,33 +332,13 @@
 
         <div>
             <h2>Disponibilidad</h2>
-            <div style="font-size:0.9rem; color:#cbd5e1;">✅ Inmediata · 100% Remoto</div>
-            <div style="font-size:0.9rem; color:#cbd5e1; margin-top:4px;">🌎 Abierto a reubicación</div>
+            <div style="font-size:0.9rem; color:#fff;">✅ Inmediata</div>
+            <div style="font-size:0.9rem; color:#fff; margin-top:4px;">🌎 Abierto a reubicación</div>
         </div>
 
         <!-- REFERENCIAS PERSONALES -->
         <div>
             <h2>Referencias disponibles bajo solicitud</h2>
-            <!-- <div class="ref-item">
-                <strong>Ing. Manuel Puente</strong><br>
-                +58 424-7747455<br>
-                <span class="ref-role">Semi Senior React · Compañero universitario</span>
-            </div>
-            <div class="ref-item">
-                <strong>Ing. Efrén Urrecheaga</strong><br>
-                +58 416-8784333<br>
-                <span class="ref-role">Compañero DrocerCA · Duo de desarrollo</span>
-            </div>
-            <div class="ref-item">
-                <strong>Ing. Carlos Piña</strong><br>
-                +58 424-7616389<br>
-                <span class="ref-role">Senior · Creador ProteoERP · Jefe Tecnología</span>
-            </div>
-            <div class="ref-item">
-                <strong>Dra. Mitchell Ferrer</strong><br>
-                +58 414-7560703<br>
-                <span class="ref-role">Jefa RRHH DrocerCA</span>
-            </div> -->
         </div>
     </div>
 
@@ -366,12 +348,11 @@
         <!-- Perfil -->
         <div class="section">
             <h2>Perfil</h2>
-            <p style="color:#334155; font-size:0.95rem; line-height:1.6;">
+            <p style="color:#000; font-size:0.95rem; line-height:1.6;">
                 Ingeniero en Informática con <strong>4+ años de experiencia</strong> como Full Stack Developer.
-                <strong>Mis mayores fortalezas</strong> son el <strong>desarrollo backend</strong>, el <strong>diseño y optimización de bases de datos</strong>,
-                la <strong>resolución de problemas complejos</strong> y el <strong>diseño de interfaces UX</strong> que mejoran la experiencia del usuario.
-                He trabajado con <strong>Odoo</strong> en proyectos para múltiples clientes, desarrollando módulos personalizados e integraciones.
-                He liderado equipos técnicos, reducido bugs críticos en <strong>70%</strong> y mejorado consultas en <strong>80%</strong>.
+                <strong>Mis mayores fortalezas</strong> son el <strong>desarrollo backend</strong>, la <strong>optimización de bases de datos (SQL Server, PostgreSQL, MySQL)</strong> con uso avanzado de <strong>procedimientos almacenados, triggers e índices</strong>, la <strong>estabilización de sistemas legacy sin documentación mediante ingeniería inversa</strong>, y el <strong>diseño de APIs REST</strong> para integración con servicios externos (facturación electrónica, pasarelas de pago).
+                He trabajado con <strong>PowerBuilder</strong> (DataWindow, cliente/servidor) en pruebas de concepto para entornos con múltiples bases de datos distribuidas.
+                He liderado equipos técnicos, reducido bugs críticos en <strong>70%</strong> y mejorado consultas de 8 minutos a menos de 5 segundos (<strong>98.96%</strong>).
             </p>
         </div>
 
@@ -384,8 +365,8 @@
                     <div class="label">Menos bugs críticos</div>
                 </div>
                 <div class="highlight-card">
-                    <div class="number">80%</div>
-                    <div class="label">Consultas más rápidas</div>
+                    <div class="number">98.96%</div>
+                    <div class="label">Mejora en consultas<br>(8 min → 5s)</div>
                 </div>
                 <div class="highlight-card">
                     <div class="number">40%</div>
@@ -402,28 +383,7 @@
         <div class="section">
             <h2>Experiencia</h2>
 
-            <div class="exp-item">
-                <div class="exp-header">
-                    <div>
-                        <h3>Backend Developer & Technical Lead</h3>
-                        <span class="company">DrocerCA</span>
-                    </div>
-                    <span class="date">Oct 2024 – Nov 2025</span>
-                </div>
-                <ul>
-                    <li>Lideré la estabilización de <strong>ProteoERP</strong> (legacy sin documentación), reduciendo bugs críticos en <strong>70%</strong> y mejorando rendimiento en <strong>40%</strong>.</li>
-                    <li>Gestioné equipo de 4 desarrolladores en migración de <strong>15+ módulos críticos</strong>, logrando <strong>100% entregas a tiempo</strong>.</li>
-                    <li>Optimicé consultas MySQL de 10s a 2s (<strong>80% mejora</strong>) en reportes financieros.</li>
-                    <li>Diseñé arquitectura para 3 módulos de inventario con <strong>1,000+ transacciones diarias</strong>.</li>
-                </ul>
-                <div class="badge-group">
-                    <span class="badge">PHP/Laravel</span>
-                    <span class="badge green">MySQL</span>
-                    <span class="badge orange">APIs REST</span>
-                    <span class="badge purple">Liderazgo</span>
-                </div>
-            </div>
-
+              <!-- ODOO -->
             <div class="exp-item">
                 <div class="exp-header">
                     <div>
@@ -445,6 +405,53 @@
                 </div>
             </div>
 
+            <!-- DROCERCA - Actualizado con la nueva información -->
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>Backend Developer & Technical Lead</h3>
+                        <span class="company">DrocerCA</span>
+                    </div>
+                    <span class="date">Oct 2024 – Nov 2025</span>
+                </div>
+                <ul>
+                    <li><strong>Ingeniería inversa y estabilización de ERP legacy (30+ años de evolución):</strong> Lideré el rescate de <strong>ProteoERP</strong>, un sistema crítico sin documentación con más de <strong>30 años de desarrollo continuo (desde 1995)</strong>. Apliqué técnicas de <strong>ingeniería inversa</strong> para mapear la lógica de negocio, las estructuras de datos y las dependencias entre módulos en un sistema con múltiples capas históricas. Documenté el sistema desde cero y estabilicé su operación, reduciendo los <strong>bugs críticos en un 70%</strong> y mejorando el rendimiento general en un <strong>40%</strong>.</li>
+                    <li><strong>Optimización extrema de bases de datos (SQL Server):</strong> Diseñé e implementé una estrategia completa de optimización que incluyó la creación de <strong>índices estratégicos, refactoring de consultas complejas, y el uso avanzado de procedimientos almacenados y triggers</strong> para garantizar la integridad y el rendimiento en un sistema con décadas de datos acumulados. Logré reducir los tiempos de respuesta de los reportes financieros de <strong>8 minutos a menos de 5 segundos (98.96% de mejora)</strong>. Además, trabajé con un entorno de <strong>3 bases de datos en servidores distintos</strong>, unificando consultas distribuidas para consolidar información en tiempo real.</li>
+                    <li><strong>Desarrollo de API de facturación digital:</strong> Diseñé e implementé una <strong>API REST</strong> para la generación y envío de facturas electrónicas, integrando la lógica de negocio del ERP con los estándares del <strong>SENIAT</strong>. La API se encargaba de la validación de datos, el cálculo de impuestos (IVA, ISLR, IGTF), la generación de documentos XML y la comunicación con los servicios de facturación electrónica. Esto permitió automatizar por completo el proceso, reduciendo los errores manuales y agilizando los cierres contables.</li>
+                    <li><strong>Prueba de concepto con PowerBuilder (DataWindow y cliente/servidor):</strong> Evalué la viabilidad de PowerBuilder para unificar consultas entre las múltiples bases de datos. Desarrollé una <strong>prueba de concepto de un módulo de facturación</strong> utilizando <strong>DataWindow</strong> para la gestión visual de datos y la lógica cliente/servidor. Esta experiencia me permitió comprender en profundidad la arquitectura de PowerBuilder, la gestión de DataWindows y el lenguaje PowerScript, aunque finalmente no se implementó en producción.</li>
+                    <li><strong>Análisis de estructura y debugging de sistemas complejos:</strong> Realicé un análisis exhaustivo de la estructura del ERP, identificando cuellos de botella, dependencias ocultas y código obsoleto en un sistema con décadas de parches y modificaciones. Utilicé técnicas de <strong>debugging</strong> a nivel de base de datos y de aplicación para identificar y corregir errores en un sistema sin documentación.</li>
+                </ul>
+                <div class="badge-group">
+                    <span class="badge">30+ años</span>
+                    <span class="badge">SQL Server</span>
+                    <span class="badge green">Triggers</span>
+                    <span class="badge orange">APIs REST</span>
+                    <span class="badge purple">PowerBuilder</span>
+                    <span class="badge">Ingeniería Inversa</span>
+                </div>
+            </div>
+
+            <!-- QUALITAS -->
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>Web Master / SEO</h3>
+                        <span class="company">Qualitas Plaza · Marketing Standard</span>
+                    </div>
+                    <span class="date">Ene 2023 – Dic 2023</span>
+                </div>
+                <ul>
+                    <li>Mejoré <strong>Core Web Vitals</strong> en <strong>40%</strong> mediante caching, minificación y optimización de assets.</li>
+                    <li>Gestión técnica de múltiples sitios web de alto tráfico, asegurando escalabilidad y mantenimiento.</li>
+                </ul>
+                <div class="badge-group">
+                    <span class="badge">WordPress</span>
+                    <span class="badge orange">SEO</span>
+                    <span class="badge green">Performance</span>
+                </div>
+            </div>
+
+            <!-- LICEO -->
             <div class="exp-item">
                 <div class="exp-header">
                     <div>
@@ -464,25 +471,7 @@
                     <span class="badge">JavaScript</span>
                 </div>
             </div>
-
-            <div class="exp-item">
-                <div class="exp-header">
-                    <div>
-                        <h3>Web Master / SEO</h3>
-                        <span class="company">Qualitas Plaza · Marketing Standard</span>
-                    </div>
-                    <span class="date">Ene 2023 – Dic 2023</span>
-                </div>
-                <ul>
-                    <li>Mejoré <strong>Core Web Vitals</strong> en <strong>40%</strong> mediante caching, minificación y optimización de assets.</li>
-                    <li>Gestión técnica de múltiples sitios web de alto tráfico, asegurando escalabilidad y mantenimiento.</li>
-                </ul>
-                <div class="badge-group">
-                    <span class="badge">WordPress</span>
-                    <span class="badge orange">SEO</span>
-                    <span class="badge green">Performance</span>
-                </div>
-            </div>
+            
         </div>
 
         <!-- Educación -->

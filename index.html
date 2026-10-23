@@ -44,8 +44,9 @@
                     Especialista en <strong>backend</strong>, <strong>bases de datos (SQL Server, PostgreSQL)</strong>, <strong>PowerBuilder</strong>, <strong>Odoo</strong> y <strong>optimización extrema</strong>.
                 </p>
                 <div class="hero-buttons">
-                    <a id="downloadCvBtn" href="Luis Díaz · Full Stack Developer · CV 2026.pdf" download class="btn-primary" data-i18n="hero.download_cv">
-                        <i class="fas fa-download"></i> Descargar CV
+                    <!-- BOTÓN ACTUALIZADO PARA IR AL CV ONLINE -->
+                    <a id="viewCvBtn" href="cv_online_luis.html" target="_blank" class="btn-primary" data-i18n="hero.view_cv">
+                        <i class="fas fa-file-alt"></i> Ver CV Online
                     </a>
                     <a href="#contacto" class="btn-secondary" data-i18n="hero.contact">
                         <i class="fas fa-paper-plane"></i> Contactar
@@ -111,7 +112,7 @@
         </div>
     </section>
 
-    <!-- Experiencia (timeline visual) -->
+    <!-- Experiencia (timeline visual actualizado) -->
     <section class="section experience-section reveal">
         <div class="container">
             <div class="section-header center">
@@ -120,7 +121,51 @@
                 <p class="section-subtitle" data-i18n="experience.subtitle">+4 años construyendo y escalando</p>
             </div>
             <div class="timeline">
-                <!-- DrocerCA (ampliada) -->
+
+                <!-- Nuevo ProteoERP (2026 - Presente) -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2026 - Presente</div>
+                    <div class="timeline-card glass">
+                        <h3 data-i18n="exp.proteo.title">Desarrollador Full Stack & Migración de Datos</h3>
+                        <p class="company">Nuevo ProteoERP · DrocerCA</p>
+                        <ul>
+                            <li data-i18n="exp.proteo.li1"><strong>Modernización y Agentes AI:</strong> Equipo central (junto al creador original) creando la nueva versión del ERP, integrando agentes de IA (DeepSeek).</li>
+                            <li data-i18n="exp.proteo.li2"><strong>Migración a Tiempo Récord:</strong> Lideré la migración de BD y funciones críticas hacia la nueva arquitectura.</li>
+                            <li data-i18n="exp.proteo.li3"><strong>Estabilidad:</strong> Despliegue de versión altamente estable para la gestión operativa actual.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- MultiserviciosLjhyr (Sep 2026) -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Sep 2026</div>
+                    <div class="timeline-card glass">
+                        <h3 data-i18n="exp.vibecoding.title">Proyecto Personal · Prueba de Concepto</h3>
+                        <p class="company">Sistema MultiserviciosLjhyr</p>
+                        <ul>
+                            <li data-i18n="exp.vibecoding.li1">Desarrollo de proyecto bajo la técnica de <strong>vibecoding</strong>.</li>
+                            <li data-i18n="exp.vibecoding.li2">Exploración práctica del uso de <strong>Agentes de Inteligencia Artificial</strong> en el ciclo de desarrollo de software.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Freelance -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2026</div>
+                    <div class="timeline-card glass">
+                        <h3 data-i18n="exp.freelance.title">Full Stack Developer · Freelance</h3>
+                        <p class="company">DrocerCA · Gentech · Clientes Odoo</p>
+                        <ul>
+                            <li data-i18n="exp.freelance.li1">Módulos personalizados en <strong>Odoo (Python/PostgreSQL)</strong>.</li>
+                            <li data-i18n="exp.freelance.li2">Optimización de consultas y diagnóstico en sistemas legacy.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- DrocerCA (Legacy) -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2024 - 2025</div>
@@ -128,15 +173,15 @@
                         <h3 data-i18n="exp.drocer.title">Backend Developer & Technical Lead</h3>
                         <p class="company">DrocerCA</p>
                         <ul>
-                            <li data-i18n="exp.drocer.li1"><strong>Ingeniería inversa de ERP legacy (30+ años):</strong> Lideré el rescate de ProteoERP (desde 1995) sin documentación, aplicando técnicas de ingeniería inversa para mapear lógica de negocio, estructuras de datos y dependencias. Reduje <strong>bugs críticos en 70%</strong> y mejoré rendimiento en <strong>40%</strong>.</li>
-                            <li data-i18n="exp.drocer.li2"><strong>Optimización extrema en SQL Server:</strong> Implementé índices estratégicos, refactoring de consultas, y uso avanzado de procedimientos almacenados y triggers. Reduje reportes financieros de <strong>8 minutos a 5 segundos (98.96% mejora)</strong>.</li>
-                            <li data-i18n="exp.drocer.li3"><strong>API de facturación digital (SENIAT):</strong> Diseñé e implementé API REST para facturación electrónica, integrando validación de datos, cálculo de impuestos (IVA, ISLR, IGTF) y generación de XML.</li>
-                            <li data-i18n="exp.drocer.li4"><strong>Prueba de concepto con PowerBuilder:</strong> Evalué PowerBuilder (DataWindow, cliente/servidor) para unificar consultas entre 3 bases de datos distribuidas. Desarrollé un módulo de facturación como prueba, comprendiendo la arquitectura y el lenguaje PowerScript.</li>
-                            <li data-i18n="exp.drocer.li5"><strong>Análisis estructural y debugging:</strong> Realicé análisis exhaustivo del ERP identificando cuellos de botella, dependencias ocultas y código obsoleto. Apliqué debugging a nivel de base de datos y aplicación para corregir errores sin documentación.</li>
+                            <li data-i18n="exp.drocer.li1"><strong>Ingeniería inversa de ERP legacy (30+ años):</strong> Rescate de ProteoERP sin documentación. Reduje bugs en 70% y mejoré rendimiento en 40%.</li>
+                            <li data-i18n="exp.drocer.li2"><strong>Optimización extrema:</strong> Reportes financieros de <strong>8 minutos a 5 segundos (98.96%)</strong> en SQL Server.</li>
+                            <li data-i18n="exp.drocer.li3"><strong>API de facturación digital:</strong> Integración con SENIAT (IVA, ISLR, IGTF) y generación de XML.</li>
+                            <li data-i18n="exp.drocer.li4"><strong>PowerBuilder:</strong> Evaluación de DataWindow y cliente/servidor para múltiples BD distribuidas.</li>
                         </ul>
                     </div>
                 </div>
-                <!-- Odoo (sin empresa) -->
+
+                <!-- Odoo -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2025 - 2026</div>
@@ -147,10 +192,10 @@
                             <li data-i18n="exp.odoo.li1">Módulos personalizados para logística, ventas y manufactura</li>
                             <li data-i18n="exp.odoo.li2">Integración contabilidad + inventario + facturación electrónica</li>
                             <li data-i18n="exp.odoo.li3">Optimización PostgreSQL: <strong>-40% tiempos de carga</strong></li>
-                            <li data-i18n="exp.odoo.li4">Debugging de sistemas legacy sin documentación</li>
                         </ul>
                     </div>
                 </div>
+
                 <!-- Liceo Bolivariano -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
@@ -161,11 +206,10 @@
                         <ul>
                             <li data-i18n="exp.liceo.li1">Sistema académico completo en <strong>dos instituciones en paralelo</strong></li>
                             <li data-i18n="exp.liceo.li2">Matrícula de alto volumen + optimización de consultas</li>
-                            <li data-i18n="exp.liceo.li3">Módulos: alumnos, materias, grados, notas, boletines</li>
-                            <li data-i18n="exp.liceo.li4">Dashboards con métricas estadísticas en tiempo real</li>
                         </ul>
                     </div>
                 </div>
+
                 <!-- Qualitas Plaza -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
@@ -176,7 +220,6 @@
                         <ul>
                             <li data-i18n="exp.qualitas.li1">Optimización SEO y performance web: <strong>+40% Core Web Vitals</strong></li>
                             <li data-i18n="exp.qualitas.li2">Gestión técnica de múltiples sitios de alto tráfico</li>
-                            <li data-i18n="exp.qualitas.li3">Caching, minificación de assets y buenas prácticas SEO</li>
                         </ul>
                     </div>
                 </div>
@@ -206,7 +249,7 @@
             <div class="section-header center">
                 <span class="section-tag" data-i18n="portfolio.tag">Portafolio</span>
                 <h2 class="section-title" data-i18n="portfolio.title">Proyectos <span class="gradient-text">destacados</span></h2>
-                <p class="section-subtitle" data-i18n="portfolio.subtitle">5 proyectos reales · Carrusel con 3 imágenes cada uno</p>
+                <p class="section-subtitle" data-i18n="portfolio.subtitle">Proyectos reales · Carrusel con 3 imágenes cada uno</p>
             </div>
 
             <!-- Proyecto 1: Sistema de Gestión Académica -->

@@ -4,497 +4,416 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis Díaz · CV 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-body: #f1f5f9;
+            --bg-card: #ffffff;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            background: #eef2f7;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 0;
-            margin: 0;
         }
-        .cv {
-            max-width: 1100px;
+
+        .btn-download {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .btn-download:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .cv-container {
+            max-width: 900px;
             width: 100%;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px -12px rgba(0, 0, 0, 0.20);
-            display: grid;
-            grid-template-columns: 280px 1fr;
+            background-color: var(--bg-card);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
             overflow: hidden;
         }
-        .sidebar {
-            background: #0f172a;
-            color: #e2e8f0;
-            padding: 40px 0px 32px;
+
+        .header {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px;
             display: flex;
-            flex-direction: column;
-            gap: 28px;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
+
+        .header-left { flex: 1; min-width: 300px; }
+        .header-left h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 5px; }
+        .header-left h2 { font-size: 1.2rem; color: #93c5fd; font-weight: 500; margin-bottom: 15px; }
+
+        .contact-list { display: flex; flex-wrap: wrap; gap: 15px; font-size: 0.9rem; color: #cbd5e1; }
+        .contact-list a { color: #cbd5e1; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+        .contact-list a:hover { color: white; }
+        .contact-list i { color: var(--accent); }
+
         .profile-img {
-            width: 140px;
-            height: 140px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #3b82f6;
-            margin: 0 auto 8px;
-            display: block;
+            border: 4px solid var(--accent);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-        .sidebar h2 {
-            color: #ffffff;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            border-bottom: 2px solid #3b82f6;
-            padding-bottom: 8px;
-            margin-bottom: 14px;
-        }
-        .sidebar .name {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #ffffff;
-            text-align: center;
-            line-height: 1.2;
-        }
-        .sidebar .title {
-            text-align: center;
-            color: #94a3b8;
-            font-weight: 500;
-            font-size: 0.9rem;
-            margin-top: -4px;
-        }
-        .sidebar .contact-item {
-            display: flex;
-            align-items: center;
-            /* gap: 12px; */
-            font-size: 1rem;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-        .sidebar .contact-item i {
-            width: 20px;
-            color: #3b82f6;
-            font-size: 1rem;
-        }
-        .sidebar .contact-item a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.79rem;
-        }
-        .sidebar .contact-item a:hover {
-            color: #ffffff;
-        }
-        .skill-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .skill-chips span {
-            background: #1e293b;
-            padding: 4px 12px;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #e2e8f0;
-            border: 1px solid #000;
-        }
-        .lang-item {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            padding: 4px 0;
-            border-bottom: 1px solid #1e293b;
-        }
-        .lang-item span:last-child {
-            color: #94a3b8;
-            font-weight: 500;
-        }
-        .ref-item {
-            margin-bottom: 14px;
-            font-size: 0.8rem;
-            color: #fff;
-            line-height: 1.5;
-        }
-        .ref-item strong {
-            color: #ffffff;
-            font-weight: 600;
-        }
-        .ref-item .ref-role {
-            color: #94a3b8;
-            font-size: 0.7rem;
-        }
-        .main {
-            padding: 40px 44px 32px 36px;
-            background: #ffffff;
-        }
-        .main h2 {
+
+        .main-content { padding: 40px; }
+
+        .section-title {
             font-size: 1.3rem;
             font-weight: 700;
-            color: #0f172a;
-            border-bottom: 3px solid #3b82f6;
-            display: inline-block;
-            padding-bottom: 4px;
-            margin-bottom: 18px;
-            letter-spacing: -0.02em;
-        }
-        .main .section {
-            margin-bottom: 32px;
-        }
-        .exp-item {
-            margin-bottom: 22px;
-        }
-        .exp-item .exp-header {
+            color: var(--primary);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            margin-bottom: 4px;
-        }
-        .exp-item .exp-header h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #0f172a;
-        }
-        .exp-item .exp-header .company {
-            font-weight: 600;
-            color: #3b82f6;
-        }
-        .exp-item .exp-header .date {
-            font-size: 0.8rem;
-            color: #64748b;
-            font-weight: 500;
-        }
-        .exp-item ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 6px;
-        }
-        .exp-item ul li {
-            padding-left: 20px;
-            position: relative;
-            font-size: 0.9rem;
-            color: #000;
-            margin-bottom: 4px;
-        }
-        .exp-item ul li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: #3b82f6;
-            font-weight: bold;
-        }
-        .badge-group {
-            display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             gap: 10px;
-            margin: 10px 0 4px;
         }
-        .badge {
-            background: #eff6ff;
-            color: #1e40af;
-            padding: 2px 12px;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border: 1px solid #bfdbfe;
+
+        .section-title i { color: var(--accent); }
+
+        .profile-text { font-size: 1rem; color: var(--text-main); margin-bottom: 30px; text-align: justify; }
+        .profile-text strong { color: var(--primary); }
+
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 40px; }
+
+        .kpi-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            border-radius: 8px;
         }
-        .badge.green {
-            background: #ecfdf5;
-            color: #065f46;
-            border-color: #a7f3d0;
+
+        .kpi-number { font-size: 1.6rem; font-weight: 800; color: var(--primary); }
+        .kpi-label { font-size: 0.85rem; color: var(--text-light); font-weight: 500; }
+
+        .experience-item { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid #e2e8f0; }
+        .experience-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+        .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 5px; }
+        .exp-title { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+        .exp-company { font-size: 0.95rem; font-weight: 600; color: var(--accent); margin-bottom: 8px; }
+        .exp-date { font-size: 0.85rem; font-weight: 600; color: var(--text-light); background-color: #f1f5f9; padding: 3px 10px; border-radius: 20px; }
+
+        .exp-list { list-style: none; padding-left: 0; margin-top: 10px; }
+        .exp-list li { position: relative; padding-left: 20px; margin-bottom: 8px; font-size: 0.95rem; }
+        .exp-list li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+        .tech-tag { font-size: 0.75rem; font-weight: 600; background-color: #eff6ff; color: #1e40af; padding: 4px 10px; border-radius: 6px; border: 1px solid #bfdbfe; }
+
+        .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+
+        .edu-item { margin-bottom: 15px; }
+        .edu-title { font-weight: 700; color: var(--primary); font-size: 0.95rem; }
+        .edu-place { font-size: 0.85rem; color: var(--text-light); }
+
+        .lang-item { display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 10px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px; }
+        .lang-name { font-weight: 600; color: var(--primary); }
+        .lang-level { color: var(--text-light); }
+
+        @media (max-width: 768px) {
+            .header { flex-direction: column-reverse; text-align: center; }
+            .contact-list { justify-content: center; }
+            .bottom-grid { grid-template-columns: 1fr; gap: 20px; }
+            .btn-download { bottom: 20px; top: auto; right: 20px; width: calc(100% - 40px); justify-content: center;}
         }
-        .badge.orange {
-            background: #fffbeb;
-            color: #92400e;
-            border-color: #fde68a;
-        }
-        .badge.purple {
-            background: #f5f3ff;
-            color: #5b21b6;
-            border-color: #c4b5fd;
-        }
-        .highlight-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 8px;
-        }
-        .highlight-card {
-            background: #f8fafc;
-            padding: 14px 16px;
-            border-radius: 12px;
-            border-left: 4px solid #3b82f6;
-        }
-        .highlight-card .number {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: #0f172a;
-        }
-        .highlight-card .label {
-            font-size: 0.8rem;
-            color: #475569;
-        }
+
         @media print {
-            body {
-                background: white;
-                padding: 0 !important;
-                margin: 0 !important;
-            }
-            .cv {
-                box-shadow: none;
-                border-radius: 0;
-                max-width: 100%;
-            }
-            .sidebar {
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
-            }
-            .badge, .badge.green, .badge.orange, .badge.purple {
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
-            }
-            .highlight-card {
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
-            }
-        }
-        @media (max-width: 750px) {
-            .cv {
-                grid-template-columns: 1fr;
-            }
-            .sidebar {
-                text-align: center;
-            }
-            .sidebar .contact-item {
-                justify-content: center;
-            }
-            .main {
-                padding: 28px 20px;
-            }
-            .highlight-grid {
-                grid-template-columns: 1fr;
-            }
+            body { background-color: white; padding: 0; display: block; }
+            .btn-download { display: none; }
+            .cv-container { box-shadow: none; border-radius: 0; max-width: 100%; }
+            .header { background-color: #0f172a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .tech-tag { background-color: #eff6ff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .exp-date { background-color: #f1f5f9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .kpi-card { background-color: #f8fafc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .experience-item { page-break-inside: avoid; }
         }
     </style>
 </head>
 <body>
-<div class="cv">
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-        <img src="perfil.jpg" alt="Luis Díaz" class="profile-img">
-        <div>
-            <div class="name">Luis Díaz</div>
-            <div class="title">Ingeniero en Informática</div>
-            <div class="title">Full Stack Developer</div>
-        </div>
+    <button class="btn-download" onclick="window.print()">
+        <i class="fas fa-file-pdf"></i> Descargar PDF
+    </button>
 
-        <div>
-            <h2>Contacto</h2>
-            <div class="contact-item"><i class="fas fa-envelope"></i> luislulo32d@gmail.com</div>
-            <div class="contact-item"><i class="fas fa-phone"></i> +58 412 138 58 91</div>
-            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Av. Las Ámericas, Mérida, Venezuela</div>
-            <div class="contact-item"><i class="fab fa-linkedin"></i> https://www.linkedin.com/in/<br>luisdiazguillen/</div>
-            <div class="contact-item"><i class="fab fa-github"></i> https://github.com/luislulo32d</div>
-            <div class="contact-item"><i class="fas fa-globe"></i> https://portfolio2026.luislulo32d.<br>workers.dev</div>
-        </div>
+    <div class="cv-container">
 
-        <div>
-            <h2>Habilidades</h2>
-            <div class="skill-chips">
-                <span>SQL Server</span>
-                <span>PowerBuilder</span>
-                <span>PHP/Laravel</span>
-                <span>Node.js</span>
-                <span>Python</span>
-                <span>React</span>
-                <span>APIs REST</span>
-                <span>PostgreSQL</span>
-                <span>Git</span>
-                <span>Docker</span>
+        <header class="header">
+            <div class="header-left">
+                <h1>Luis Díaz</h1>
+                <h2>Full Stack Developer</h2>
+                <div class="contact-list">
+                    <a href="mailto:luislulo32d@gmail.com"><i class="fas fa-envelope"></i> luislulo32d@gmail.com</a>
+                    <a href="tel:+584121385891"><i class="fas fa-phone"></i> +58 412 138 58 91</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Mérida, Venezuela</a>
+                    <a href="https://linkedin.com/in/luisdiazguillen" target="_blank"><i class="fab fa-linkedin"></i> luisdiazguillen</a>
+                    <a href="https://github.com/luislulo32d" target="_blank"><i class="fab fa-github"></i> luislulo32d</a>
+                    <a href="https://portfolio2026.luislulo32d.workers.dev" target="_blank"><i class="fas fa-globe"></i> Portafolio</a>
+                </div>
             </div>
-        </div>
+            <div class="header-right">
+                <img src="perfil.jpg" alt="Luis Díaz" class="profile-img" onerror="this.style.display='none'">
+            </div>
+        </header>
 
-        <div>
-            <h2>Idiomas</h2>
-            <div class="lang-item"><span>Español</span><span>Nativo</span></div>
-            <div class="lang-item"><span>Inglés</span><span>B2 · Técnico</span></div>
-        </div>
+        <main class="main-content">
 
-        <div>
-            <h2>Disponibilidad</h2>
-            <div style="font-size:0.9rem; color:#fff;">✅ Inmediata</div>
-            <div style="font-size:0.9rem; color:#fff; margin-top:4px;">🌎 Abierto a reubicación</div>
-        </div>
+            <section>
+                <h3 class="section-title"><i class="fas fa-user-circle"></i> Perfil Profesional</h3>
+                <p class="profile-text">
+                    Ingeniero en Informática con <strong>4+ años de experiencia</strong> como Full Stack Developer. Mis mayores fortalezas son el desarrollo backend, la optimización de bases de datos (SQL Server, PostgreSQL, MySQL), la estabilización de sistemas legacy sin documentación mediante ingeniería inversa, y el diseño de APIs REST. Me destaco por mi rápida adaptabilidad, liderazgo técnico y capacidad para integrar <strong>Agentes de Inteligencia Artificial (DeepSeek)</strong> en arquitecturas modernas.
+                </p>
+            </section>
 
-        <!-- REFERENCIAS PERSONALES -->
-        <div>
-            <h2>Referencias disponibles bajo solicitud</h2>
-        </div>
+            <section>
+                <h3 class="section-title"><i class="fas fa-chart-line"></i> Impacto Medible</h3>
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-number">70%</div>
+                        <div class="kpi-label">Menos bugs críticos en sistemas legacy</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-number">98.96%</div>
+                        <div class="kpi-label">Mejora en consultas (8 min a < 5 s)</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-number">40%</div>
+                        <div class="kpi-label">Mejora de rendimiento general</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-number">1,000+</div>
+                        <div class="kpi-label">Transacciones procesadas diarias</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="section-title"><i class="fas fa-briefcase"></i> Experiencia Laboral</h3>
+
+                <!-- 1. Nuevo ProteoERP -->
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Desarrollador Full Stack & Migración de Datos</div>
+                            <div class="exp-company">Nuevo ProteoERP · DrocerCA</div>
+                        </div>
+                        <span class="exp-date">Oct 2026 – Presente</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li><strong>Modernización y Agentes AI:</strong> Formo parte del equipo central (junto al creador original de ProteoERP) en la creación de la nueva versión del ERP, aplicando tecnologías actuales e integrando agentes de Inteligencia Artificial (DeepSeek) para adaptar el sistema a las nuevas necesidades del negocio.</li>
+                        <li><strong>Migración a Tiempo Récord:</strong> Lideré la migración de la base de datos y la portabilidad de funciones críticas del sistema antiguo a la nueva arquitectura, reduciendo drásticamente los tiempos de entrega.</li>
+                        <li><strong>Estabilidad y Eficiencia:</strong> Desplegué una versión altamente estable que permite a la droguería gestionar su movimiento operativo actual de manera más eficiente y escalable.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Agentes AI (DeepSeek)</span>
+                        <span class="tech-tag">Migración de Datos</span>
+                        <span class="tech-tag">Arquitectura Backend</span>
+                    </div>
+                </div>
+
+                <!-- 2. Freelance -->
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Full Stack Developer · Freelance</div>
+                            <div class="exp-company">DrocerCA · Gentech · Múltiples clientes Odoo</div>
+                        </div>
+                        <span class="exp-date">Mar 2026 – Presente</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Desarrollo y mantenimiento de módulos personalizados en <strong>Odoo (Python/PostgreSQL)</strong> para clientes en logística y manufactura.</li>
+                        <li>Optimización de consultas PostgreSQL, reduciendo tiempos de carga en módulos críticos.</li>
+                        <li>Diagnóstico y corrección de errores en sistemas Odoo legacy sin documentación.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">APIs REST</span>
+                    </div>
+                </div>
+
+                <!-- 3. Proyecto Personal / Vibecoding (FECHA CORREGIDA) -->
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Proyecto Personal · Prueba de Concepto (Vibecoding)</div>
+                            <div class="exp-company">Sistema MultiserviciosLjhyr</div>
+                        </div>
+                        <span class="exp-date">14 Sep 2026</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li><strong>Exploración de Agentes AI:</strong> Desarrollé este proyecto como una prueba de concepto de <strong>vibecoding</strong> para comprender mejor el uso práctico de agentes de Inteligencia Artificial en el desarrollo de software.</li>
+                        <li><strong>Aplicación Práctica:</strong> Construí un sistema de gestión multiservicios funcional, aplicando flujos de trabajo asistidos por IA para acelerar el desarrollo y validar la viabilidad de estas herramientas en entornos reales.</li>
+                        <li><strong>Repositorio:</strong> Código disponible en <a href="https://github.com/luislulo32d/multiServiciosLjhyr" target="_blank" style="color: var(--accent); font-weight: 600;">GitHub</a>.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Agentes AI</span>
+                        <span class="tech-tag">Vibecoding</span>
+                        <span class="tech-tag">Desarrollo Rápido</span>
+                    </div>
+                </div>
+
+                <!-- 4. Odoo Developer -->
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Odoo Developer</div>
+                            <div class="exp-company">Proyectos para múltiples clientes</div>
+                        </div>
+                        <span class="exp-date">Nov 2025 – Feb 2026</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Desarrollé módulos personalizados en <strong>Python/PostgreSQL</strong> para logística, ventas y manufactura.</li>
+                        <li>Integraciones con contabilidad, inventario y facturación electrónica.</li>
+                        <li>Optimización PostgreSQL logrando -40% en tiempos de carga de reportes financieros.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Odoo</span>
+                    </div>
+                </div>
+
+                <!-- 5. DrocerCA Legacy -->
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Backend Developer & Technical Lead</div>
+                            <div class="exp-company">DrocerCA</div>
+                        </div>
+                        <span class="exp-date">Oct 2024 – Nov 2025</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li><strong>Ingeniería inversa y estabilización:</strong> Lideré el rescate de ProteoERP (30+ años de antigüedad, sin documentación), reduciendo bugs críticos en un <strong>70%</strong> y mejorando el rendimiento general en un <strong>40%</strong>.</li>
+                        <li><strong>Optimización extrema de BD:</strong> Diseñé estrategias de índices, refactorización de consultas y procedimientos almacenados, reduciendo reportes financieros de 8 minutos a menos de 5 segundos (<strong>98.96% de mejora</strong>).</li>
+                        <li><strong>API de Facturación Digital:</strong> Diseñé e implementé una API REST para facturación electrónica (SENIAT), cálculo de impuestos (IVA, ISLR, IGTF) y generación de XML.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">SQL Server</span>
+                        <span class="tech-tag">PHP/Laravel</span>
+                        <span class="tech-tag">APIs REST</span>
+                        <span class="tech-tag">Liderazgo Técnico</span>
+                    </div>
+                </div>
+
+                <!-- 6. Qualitas Plaza -->
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Web Master</div>
+                            <div class="exp-company">Qualitas Plaza · Marketing Standard</div>
+                        </div>
+                        <span class="exp-date">Ene 2023 – Dic 2023</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Mejoré <strong>Core Web Vitals en 40%</strong> mediante caching, minificación y optimización de assets.</li>
+                        <li>Gestión técnica de múltiples sitios web de alto tráfico, asegurando escalabilidad y mantenimiento.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">WordPress</span>
+                        <span class="tech-tag">SEO</span>
+                        <span class="tech-tag">Performance Web</span>
+                    </div>
+                </div>
+
+                <!-- 7. Liceo Bolivariano -->
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Full Stack Developer</div>
+                            <div class="exp-company">Liceo Bolivariano de Ejido</div>
+                        </div>
+                        <span class="exp-date">Oct 2020 – Sep 2022</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Construí sistema de gestión académica desde cero (PHP/MySQL) para <strong>2,000+ usuarios</strong> en 2 instituciones en paralelo.</li>
+                        <li>Implementé módulos de matrícula, notas, boletines automatizados y dashboards con métricas estadísticas.</li>
+                        <li>Diseñé arquitectura segura con control de acceso por roles (RBAC).</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="bottom-grid">
+                <section>
+                    <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Educación</h3>
+                    <div class="edu-item">
+                        <div class="edu-title">Ingeniería en Informática</div>
+                        <div class="edu-place">UPTM Kléber Ramírez · 2022 – 2024</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-title">Técnico Superior Universitario en Informática</div>
+                        <div class="edu-place">UPTM Kléber Ramírez · 2018 – 2021</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-title">Bachiller en Ciencias</div>
+                        <div class="edu-place">U.E. Julio César Dávila · 2016</div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="section-title"><i class="fas fa-language"></i> Idiomas</h3>
+                    <div class="lang-item">
+                        <span class="lang-name">Español</span>
+                        <span class="lang-level">Nativo</span>
+                    </div>
+                    <div class="lang-item">
+                        <span class="lang-name">Inglés</span>
+                        <span class="lang-level">B2 - Técnico</span>
+                    </div>
+
+                    <h3 class="section-title" style="margin-top: 25px;"><i class="fas fa-check-circle"></i> Disponibilidad</h3>
+                    <ul class="exp-list" style="margin-top: 5px;">
+                        <li>✅ Inmediata · 100% Remoto</li>
+                        <li>🌎 Abierto a reubicación</li>
+                        <li>🔌 Suministro eléctrico continuo (Zona Seguro Social, Mérida)</li>
+                    </ul>
+                </section>
+            </div>
+
+        </main>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="main">
-
-        <!-- Perfil -->
-        <div class="section">
-            <h2>Perfil</h2>
-            <p style="color:#000; font-size:0.95rem; line-height:1.6;">
-                Ingeniero en Informática con <strong>4+ años de experiencia</strong> como Full Stack Developer.
-                <strong>Mis mayores fortalezas</strong> son el <strong>desarrollo backend</strong>, la <strong>optimización de bases de datos (SQL Server, PostgreSQL, MySQL)</strong> con uso avanzado de <strong>procedimientos almacenados, triggers e índices</strong>, la <strong>estabilización de sistemas legacy sin documentación mediante ingeniería inversa</strong>, y el <strong>diseño de APIs REST</strong> para integración con servicios externos (facturación electrónica, pasarelas de pago).
-                He trabajado con <strong>PowerBuilder</strong> (DataWindow, cliente/servidor) en pruebas de concepto para entornos con múltiples bases de datos distribuidas.
-                He liderado equipos técnicos, reducido bugs críticos en <strong>70%</strong> y mejorado consultas de 8 minutos a menos de 5 segundos (<strong>98.96%</strong>).
-            </p>
-        </div>
-
-        <!-- Logros destacados -->
-        <div class="section">
-            <h2>Impacto</h2>
-            <div class="highlight-grid">
-                <div class="highlight-card">
-                    <div class="number">70%</div>
-                    <div class="label">Menos bugs críticos</div>
-                </div>
-                <div class="highlight-card">
-                    <div class="number">98.96%</div>
-                    <div class="label">Mejora en consultas<br>(8 min → 5s)</div>
-                </div>
-                <div class="highlight-card">
-                    <div class="number">40%</div>
-                    <div class="label">Mejora de rendimiento</div>
-                </div>
-                <div class="highlight-card">
-                    <div class="number">1,000+</div>
-                    <div class="label">Transacciones / día</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Experiencia -->
-        <div class="section">
-            <h2>Experiencia</h2>
-
-              <!-- ODOO -->
-            <div class="exp-item">
-                <div class="exp-header">
-                    <div>
-                        <h3>Odoo Developer</h3>
-                        <span class="company">Proyectos para múltiples clientes</span>
-                    </div>
-                    <span class="date">Nov 2025 – Feb 2026</span>
-                </div>
-                <ul>
-                    <li>Desarrollé módulos personalizados en <strong>Python/PostgreSQL</strong> para logística, ventas y manufactura.</li>
-                    <li>Integraciones con contabilidad, inventario y facturación electrónica.</li>
-                    <li>Optimización PostgreSQL: <strong>-40% tiempos de carga</strong> en reportes financieros.</li>
-                    <li>Diagnóstico y corrección de errores en sistemas legacy sin documentación.</li>
-                </ul>
-                <div class="badge-group">
-                    <span class="badge">Python</span>
-                    <span class="badge green">PostgreSQL</span>
-                    <span class="badge orange">APIs</span>
-                </div>
-            </div>
-
-            <!-- DROCERCA - Actualizado con la nueva información -->
-            <div class="exp-item">
-                <div class="exp-header">
-                    <div>
-                        <h3>Backend Developer & Technical Lead</h3>
-                        <span class="company">DrocerCA</span>
-                    </div>
-                    <span class="date">Oct 2024 – Nov 2025</span>
-                </div>
-                <ul>
-                    <li><strong>Ingeniería inversa y estabilización de ERP legacy (30+ años de evolución):</strong> Lideré el rescate de <strong>ProteoERP</strong>, un sistema crítico sin documentación con más de <strong>30 años de desarrollo continuo (desde 1995)</strong>. Apliqué técnicas de <strong>ingeniería inversa</strong> para mapear la lógica de negocio, las estructuras de datos y las dependencias entre módulos en un sistema con múltiples capas históricas. Documenté el sistema desde cero y estabilicé su operación, reduciendo los <strong>bugs críticos en un 70%</strong> y mejorando el rendimiento general en un <strong>40%</strong>.</li>
-                    <li><strong>Optimización extrema de bases de datos (SQL Server):</strong> Diseñé e implementé una estrategia completa de optimización que incluyó la creación de <strong>índices estratégicos, refactoring de consultas complejas, y el uso avanzado de procedimientos almacenados y triggers</strong> para garantizar la integridad y el rendimiento en un sistema con décadas de datos acumulados. Logré reducir los tiempos de respuesta de los reportes financieros de <strong>8 minutos a menos de 5 segundos (98.96% de mejora)</strong>. Además, trabajé con un entorno de <strong>3 bases de datos en servidores distintos</strong>, unificando consultas distribuidas para consolidar información en tiempo real.</li>
-                    <li><strong>Desarrollo de API de facturación digital:</strong> Diseñé e implementé una <strong>API REST</strong> para la generación y envío de facturas electrónicas, integrando la lógica de negocio del ERP con los estándares del <strong>SENIAT</strong>. La API se encargaba de la validación de datos, el cálculo de impuestos (IVA, ISLR, IGTF), la generación de documentos XML y la comunicación con los servicios de facturación electrónica. Esto permitió automatizar por completo el proceso, reduciendo los errores manuales y agilizando los cierres contables.</li>
-                    <li><strong>Prueba de concepto con PowerBuilder (DataWindow y cliente/servidor):</strong> Evalué la viabilidad de PowerBuilder para unificar consultas entre las múltiples bases de datos. Desarrollé una <strong>prueba de concepto de un módulo de facturación</strong> utilizando <strong>DataWindow</strong> para la gestión visual de datos y la lógica cliente/servidor. Esta experiencia me permitió comprender en profundidad la arquitectura de PowerBuilder, la gestión de DataWindows y el lenguaje PowerScript, aunque finalmente no se implementó en producción.</li>
-                    <li><strong>Análisis de estructura y debugging de sistemas complejos:</strong> Realicé un análisis exhaustivo de la estructura del ERP, identificando cuellos de botella, dependencias ocultas y código obsoleto en un sistema con décadas de parches y modificaciones. Utilicé técnicas de <strong>debugging</strong> a nivel de base de datos y de aplicación para identificar y corregir errores en un sistema sin documentación.</li>
-                </ul>
-                <div class="badge-group">
-                    <span class="badge">30+ años</span>
-                    <span class="badge">SQL Server</span>
-                    <span class="badge green">Triggers</span>
-                    <span class="badge orange">APIs REST</span>
-                    <span class="badge purple">PowerBuilder</span>
-                    <span class="badge">Ingeniería Inversa</span>
-                </div>
-            </div>
-
-            <!-- QUALITAS -->
-            <div class="exp-item">
-                <div class="exp-header">
-                    <div>
-                        <h3>Web Master / SEO</h3>
-                        <span class="company">Qualitas Plaza · Marketing Standard</span>
-                    </div>
-                    <span class="date">Ene 2023 – Dic 2023</span>
-                </div>
-                <ul>
-                    <li>Mejoré <strong>Core Web Vitals</strong> en <strong>40%</strong> mediante caching, minificación y optimización de assets.</li>
-                    <li>Gestión técnica de múltiples sitios web de alto tráfico, asegurando escalabilidad y mantenimiento.</li>
-                </ul>
-                <div class="badge-group">
-                    <span class="badge">WordPress</span>
-                    <span class="badge orange">SEO</span>
-                    <span class="badge green">Performance</span>
-                </div>
-            </div>
-
-            <!-- LICEO -->
-            <div class="exp-item">
-                <div class="exp-header">
-                    <div>
-                        <h3>Full Stack Developer</h3>
-                        <span class="company">Liceo Bolivariano de Ejido</span>
-                    </div>
-                    <span class="date">Oct 2020 – Sep 2022</span>
-                </div>
-                <ul>
-                    <li>Construí sistema de gestión académica desde cero (PHP/MySQL) para <strong>2,000+ usuarios</strong> en 2 instituciones en paralelo.</li>
-                    <li>Implementé módulos de matrícula, notas, boletines automatizados y dashboards con métricas estadísticas.</li>
-                    <li>Diseñé arquitectura segura con control de acceso por roles (RBAC).</li>
-                </ul>
-                <div class="badge-group">
-                    <span class="badge">PHP</span>
-                    <span class="badge green">MySQL</span>
-                    <span class="badge">JavaScript</span>
-                </div>
-            </div>
-            
-        </div>
-
-        <!-- Educación -->
-        <div class="section">
-            <h2>Educación</h2>
-            <div style="margin-bottom:8px;">
-                <div style="font-weight:700; color:#0f172a;">Ingeniería en Informática</div>
-                <div style="color:#3b82f6; font-weight:500;">UPTM Kléber Ramírez</div>
-                <div style="color:#64748b; font-size:0.85rem;">Ene 2022 – Abr 2024</div>
-            </div>
-            <div style="margin-bottom:8px;">
-                <div style="font-weight:700; color:#0f172a;">Técnico Superior Universitario en Informática</div>
-                <div style="color:#3b82f6; font-weight:500;">UPTM Kléber Ramírez</div>
-                <div style="color:#64748b; font-size:0.85rem;">Jun 2018 – Dic 2021</div>
-            </div>
-            <div>
-                <div style="font-weight:700; color:#0f172a;">Bachiller en Ciencias</div>
-                <div style="color:#3b82f6; font-weight:500;">Unidad Educativa Julio César Dávila</div>
-                <div style="color:#64748b; font-size:0.85rem;">2016</div>
-            </div>
-        </div>
-
-    </div>
-</div>
 </body>
 </html>
